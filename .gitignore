@@ -1,12 +1,8 @@
 .idea/
 node_modules/
 dist/
-coverage/
 *.iml
 .env
-taxonomy-gae.yaml
 deploy/dist/
 deploy/node_modules/
-tools/output
-app.yaml
 .DS_Store
