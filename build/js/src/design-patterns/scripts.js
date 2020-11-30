@@ -2,8 +2,6 @@
 "use strict";
 
 exports.__esModule = true;
-
-
 function add(x, y) {
     return x + y;
 }
@@ -76,13 +74,6 @@ var log = function () {
         },
         show: function show() {
             console.log(log);log = "";
-            var messageElement = document.createElement(log);
-            var messageContent = document.createTextNode('Hello, World! I’m a JavaScript module!');
-            messageElement.appendChild(messageContent);
-
-            document.body.appendChild(messageElement);
-
-            console.log('The helloWorld function has executed.');
         }
     };
 }();

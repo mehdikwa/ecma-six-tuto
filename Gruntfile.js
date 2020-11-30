@@ -37,9 +37,11 @@ module.exports = function(grunt) {
           ]
         },
         src: [
-          'src/design-patterns/scripts.js'
+          'src/design-patterns/*.js'
         ],
-        dest: 'build/js/scripts.js'
+        dest: 'build/js/',
+        flatten: false,
+        expand: true
       }
     }
   });
