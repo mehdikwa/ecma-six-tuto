@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "ecmascript6",
   "version": "0.0.0",
   "author": "Mehdi Merabti",
@@ -6,16 +7,15 @@
   "engines": {
     "node": "10"
   },
-  "dependencies": {
-    "lodash": "^4.17.20",
-    "mongodb": "3.3.2",
-    "neo4j-driver": "1.7.6"
-  },
   "devDependencies": {
-    "@types/lodash": "4.14.141",
-    "@types/mongodb": "3.3.5",
-    "@types/neo4j": "2.0.2",
-    "@types/node": "12.7.11"
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "load-grunt-tasks": "^3.5.2",
+    "time-grunt": "^1.4.0"
   },
-  "scripts": {}
+  "scripts": {
+    "start": "nodemon --exec babel-node src/**/*.js"
+  }
 }
