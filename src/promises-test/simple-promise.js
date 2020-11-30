@@ -10,7 +10,7 @@ function initPromise(){
     })
 };
 initPromise().then((success)=>{
-    console.log('success')
+    console.log(success)
         }).catch((error)=>{
     console.log(error)
 })
