@@ -53,7 +53,7 @@ let Calculator = function () {
     }
 }
 
-// log helper
+// showLog helper
 
 let log = (function () {
     let log = "";
@@ -66,24 +66,40 @@ let log = (function () {
     }
 })();
 
-function run() {
-    let calculator = new Calculator();
+class Run {
+    constructor(calculator = new Calculator()) {
+        this.calculator = calculator;
+    }
+    add() {
+        this.calculator.execute(new AddCommand(100));
+        this.showLogs();
+    }
 
-    // issue commands
+    sub() {
+        this.calculator.execute(new SubCommand(24));
+        this.showLogs();
+    }
 
-    calculator.execute(new AddCommand(100));
-    calculator.execute(new SubCommand(24));
-    calculator.execute(new MulCommand(6));
-    calculator.execute(new DivCommand(2));
+    mul() {
+        this.calculator.execute(new MulCommand(6));
+        this.showLogs();
+    }
 
-    // reverse last two commands
+    duv() {
+        this.calculator.execute(new DivCommand(2));
+        this.showLogs();
+    }
 
-    calculator.undo();
-    calculator.undo();
 
+    undoCommand() {
+        this.calculator.undo();
+        this.showLogs();
+    }
 
-    log.add("\nValue: " + calculator.getCurrentValue());
-    log.show();
+    showLogs() {
+        log.add("\nValue: " + this.calculator.getCurrentValue());
+        log.show();
+    }
 }
 
-export { run }
+export default Run;

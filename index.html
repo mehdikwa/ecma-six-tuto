@@ -7,6 +7,8 @@
 
     <title>Command DP Modules Example</title>
     <meta name="description" content="An example using JavaScript modules.">
+    <script type="module" src="./build/js/src/design-patterns/command.js">
+    </script>
   </head>
 
   <body>
@@ -15,7 +17,10 @@
         <h1>Command DP Modules Example</h1>
       </header>
     </article>
-
-    <script src="build/js/src/design-patterns/scripts.js"></script>
+    <script>e
+      const runMethod = new Run();
+      document.body.innerHTML = runMethod.add();
+    </script>
+<!--    <button onclick="runMethod"></button>-->
   </body>
 </html>
