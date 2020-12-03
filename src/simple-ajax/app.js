@@ -25,7 +25,9 @@ getCatsFactsAjax('https://cat-fact.herokuapp.com/facts', (res) => {
 function getCatsFactsFetch(url) {
     return new Promise((res, rej) => {
         fetch(url)
-            .then(r => res(r.json()))
+            .then(r => {
+                res(r.json())
+            })
             .catch(() => {
                 // handel errors here
             })
