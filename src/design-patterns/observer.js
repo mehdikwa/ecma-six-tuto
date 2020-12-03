@@ -26,9 +26,9 @@ Click.prototype = {
     }
 }
 
-// log helper
+// showLog helper
 
-let log = (function() {
+let showLog = (function() {
     let log = "";
 
     return {
@@ -40,7 +40,7 @@ let log = (function() {
 function run() {
 
     let clickHandler = function(item) {
-        log.add("fired: " + item);
+        showLog.add("fired: " + item);
     };
 
     let click = new Click();
@@ -52,6 +52,6 @@ function run() {
     click.subscribe(clickHandler);
     click.fire('event #3');
 
-    log.show();
+    showLog.show();
 }
 run();

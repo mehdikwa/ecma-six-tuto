@@ -12,7 +12,7 @@ Request.prototype = {
     }
 }
 
-// log helper
+// showLog helper
 
 var log = (function() {
     var log = "";

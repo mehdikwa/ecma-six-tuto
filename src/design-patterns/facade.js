@@ -30,6 +30,7 @@ var FranceCountry = function() {
         }
     }
 }
+
 var EnglandCountry = function() {
 
     this.verify = function(name) {

@@ -39,6 +39,7 @@ let Calculator = function () {
             current = command.execute(current, command.value);
             commands.push(command);
             log.add(action(command) + ": " + command.value);
+            log.show();
         },
 
         undo: function () {
@@ -66,40 +67,25 @@ let log = (function () {
     }
 })();
 
-class Run {
-    constructor(calculator = new Calculator()) {
-        this.calculator = calculator;
-    }
-    add() {
-        this.calculator.execute(new AddCommand(100));
-        this.showLogs();
-    }
+function run() {
+    let calculator = new Calculator();
 
-    sub() {
-        this.calculator.execute(new SubCommand(24));
-        this.showLogs();
-    }
+    // issue commands
 
-    mul() {
-        this.calculator.execute(new MulCommand(6));
-        this.showLogs();
-    }
+    calculator.execute(new AddCommand(100));
+    calculator.execute(new SubCommand(24));
+    calculator.execute(new MulCommand(6));
+    calculator.execute(new DivCommand(2));
 
-    duv() {
-        this.calculator.execute(new DivCommand(2));
-        this.showLogs();
-    }
+    // reverse last two commands
+
+    calculator.undo();
+    calculator.undo();
 
 
-    undoCommand() {
-        this.calculator.undo();
-        this.showLogs();
-    }
-
-    showLogs() {
-        log.add("\nValue: " + this.calculator.getCurrentValue());
-        log.show();
-    }
+    log.add("\nValue: " + calculator.getCurrentValue());
+    log.show();
 }
 
-export default Run;
+run()
+

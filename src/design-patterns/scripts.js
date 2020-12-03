@@ -1,3 +1,4 @@
-import { run } from './command.js'
+import Run from './command.js'
 
-run();
+const runMethod = new Run();
+runMethod.add();

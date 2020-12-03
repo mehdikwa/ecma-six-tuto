@@ -34,7 +34,7 @@ function ProxyFunction() {
     };
 };
 
-// log helper
+// showLog helper
 
 var log = (function() {
     var log = "";
